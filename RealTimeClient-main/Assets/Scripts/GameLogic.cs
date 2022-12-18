@@ -52,5 +52,10 @@ public class GameLogic : MonoBehaviour
             Destroy(popMe);
         }
     }
+
+    private void OnApplicationQuit()
+    {
+        NetworkedClientProcessing.SendMessageToServer(ClientToServerSignifiers.Disconnection.ToString());
+    }
 }
 
